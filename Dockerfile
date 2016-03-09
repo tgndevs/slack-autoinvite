@@ -1,13 +1,13 @@
 FROM node:5.7-slim
 
+RUN npm install -g slackin@0.8.2 --unsafe-perm
+
 COPY . /app
 
 WORKDIR /app
-
-RUN npm install
 
 ENV PORT 80
 
 EXPOSE 80
 
-CMD node /app/bin/www
+CMD ["sh", "start.sh"]
